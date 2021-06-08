@@ -1,0 +1,10 @@
+
+     <div class="Field" id="_ROW">
+         <div class="FieldCaption"><label class="FieldCaptionLabel" for="_FILE">Attachments:</label></div>
+         <div class="FieldValue">
+             <!-- <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %> -->
+             <ajaxToolkit:AjaxFileUpload ID="_AJAXFILE" class="FieldValueInput" runat="server" Width="500" OnUploadComplete="AjaxFileUpload_UploadComplete" AutoStartUpload="True" />
+             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         </div>
+     </div>
+              
