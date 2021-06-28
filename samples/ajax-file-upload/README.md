@@ -36,7 +36,7 @@ It also has a drag-and-drop functionality for uploading files.
     **Note:** The code-behind is referencing to `FILE1`, `FILE2`, etc. This is why you have to name it this way.
 
 3. In the Form Designer, add the **AjaxFileUpload** tool (located under **Custom** in the **Tools** drop-down list) to one of the form sections.<br />
-![19%20PM|690x151](upload://xXEzJufCUFyn8VPC2ApGXEGBgTk.png) 
+![image](https://user-images.githubusercontent.com/42981614/121242509-a8dbd580-c86a-11eb-9625-277f35eca889.png)
 
 4. In the form designer code-behind, copy-paste the code below:
 ```
@@ -115,10 +115,11 @@ protected void SubmitButton_Click_HandleFileUpload(object sender, EventArgs e)
 ```
 5. In the desired action, add the OUT parameters mapping,
 e.g. `FILE1 : OUT : FILE1, FILE2 : OUT : FILE2, …, FILEN : OUT : FILEN`<br />
-![Feb-15-2019%2020-03-22|609x500](upload://brhvlYgfiUBFkbInlwuZBU2PAth.gif) 
+![502d6b103be85640b2f4eccff0ee6e425837e8ef_2_609x500](https://user-images.githubusercontent.com/42981614/121242648-ce68df00-c86a-11eb-92d5-14e6ca76a07b.gif)
 
-    You should have something like this after adding all `FILEN` parameters:<br />
-    ![37%20PM|690x359](upload://tQOGtsPDqi6Cpgk0iY67PJKLjHg.png) 
+You should have something like this after adding all `FILEN` parameters:<br />
+![image](https://user-images.githubusercontent.com/42981614/121242632-cad55800-c86a-11eb-9081-6e99ff0b389f.png)
+
 
 [Sample Process](2_LEVELS_APP_FILE_UPLOAD_FDv1.xml)
 
