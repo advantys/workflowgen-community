@@ -13,4 +13,4 @@ You can test these scenarios with the `tests.json` file.
 # Implementation
 
 - Import the `INVESTMENT_APP_TEMPLATEv1.xml` process on your instance
-- Execute the command `wfg process test tests.json`'
+- Execute the command `wfg process test tests.json`
