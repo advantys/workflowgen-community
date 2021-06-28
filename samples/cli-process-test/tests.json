@@ -1,0 +1,171 @@
+{
+    "processName": "INVESTMENT_APP_TEMPLATE",
+    "processVersion": 1,
+    "tests": [
+        {
+            "describe": "The manager reject",
+            "requestParameters": [],
+            "actions": [
+                {
+                    "name": "INITIATES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "INVESTMENTS_TOTAL",
+                            "numericValue": 10000
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_MANAGER",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "MANAGER_APPROVAL",
+                            "textValue": "NO"
+                        }
+                    ]
+                }
+            ],
+            "assertions": {
+                "completedActionCount": 2,
+                "requestStatus": "CLOSED",
+                "requestSubStatus": "COMPLETED"
+            }
+        },
+        {
+            "describe": "The manager approve with amount < 15000",
+            "requestParameters": [],
+            "actions": [
+                {
+                    "name": "INITIATES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "INVESTMENTS_TOTAL",
+                            "numericValue": 10000
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_MANAGER",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "MANAGER_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                },
+                {
+                    "name": "DECIDES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "DIRECTOR_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                }
+            ],
+            "assertions": {
+                "completedActionCount": 3,
+                "requestStatus": "CLOSED",
+                "requestSubStatus": "COMPLETED"
+            }
+        },
+        {
+            "describe": "The finance controller refuse with amount > 15000",
+            "requestParameters": [],
+            "actions": [
+                {
+                    "name": "INITIATES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "INVESTMENTS_TOTAL",
+                            "numericValue": 20000
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_MANAGER",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "MANAGER_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_FINANCE_CTRL",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "FINANCE_APPROVAL",
+                            "textValue": "NO"
+                        }
+                    ]
+                }
+            ],
+            "assertions": {
+                "completedActionCount": 3,
+                "requestStatus": "CLOSED",
+                "requestSubStatus": "COMPLETED"
+            }
+        },
+        {
+            "describe": "The finance controller accept with amount > 15000",
+            "requestParameters": [],
+            "actions": [
+                {
+                    "name": "INITIATES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "INVESTMENTS_TOTAL",
+                            "numericValue": 20000
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_MANAGER",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "MANAGER_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                },
+                {
+                    "name": "VALIDATES_FINANCE_CTRL",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "FINANCE_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                },
+                {
+                    "name": "DECIDES",
+                    "operation": "COMPLETE",
+                    "parameters": [
+                        {
+                            "name": "DIRECTOR_APPROVAL",
+                            "textValue": "YES"
+                        }
+                    ]
+                }
+            ],
+            "assertions": {
+                "completedActionCount": 4,
+                "requestStatus": "CLOSED",
+                "requestSubStatus": "COMPLETED"
+            }
+        }
+    ],
+    "deleteRequest": false
+}
