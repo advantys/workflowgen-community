@@ -8,7 +8,7 @@ A solution is to implement a section collapse, to reduce the amount the user nee
 1. In the form designer, add a new section.
     1. In our process sample we added the section `FORM`.
 
-2. Add one textbox field to this new section, this field will contain which section should be collapse.
+2. Add one textbox field to this new section, this field will contain which section should be collapsed.
     1. In our process sample, the textbox is named `FIELDS_COLLAPSED`.
 
 3. Click on the gear icon to open the Form configuration
@@ -17,7 +17,7 @@ A solution is to implement a section collapse, to reduce the amount the user nee
 
 5. Click on the Web References tab
 
-6. Includes the jQuery API and jQuery UI librairies
+6. Includes the jQuery API and jQuery UI libraries
 
 7. Add the following stylesheet in the Web References
 ```
@@ -65,4 +65,4 @@ In the function `pageLoad` we hide the section `FORM` with JavaScript
 
 In the function `setCollapse` we manage the form collapse with the field `FORM_FIELDS_COLLAPSED`
 
-If your section or field have a different ID, you will need to change the reference in the JS function.
+If your section or field has a different ID, you will need to change the reference in the JS function.
