@@ -15,13 +15,14 @@ In the `GRIDVIEW_IN_CUSTOM_EMAIL` sample process, we are exporting the default g
 2. In the form designer code-behind, add the following line of code:
 
 Firstly, add a new event on the submit button, this event will be the one generating the HTML template of your gridview.
-````
+
+```cs
 protected void Page_Load(object sender, EventArgs e) 
 { 
     base.Page_Load(sender, e); 
     submitButton.Click += new EventHandler(MySubmitButton_Click); 
 } 
-````
+```
 
 Secondly, add the method that will be called by the event on the submit button.
 
@@ -30,7 +31,7 @@ Secondly, add the method that will be called by the event on the submit button.
 3. During each loop you want to add a new row that will contain the value of each of your columns.
 4. After looping all the rows, save the data in the new textbox field you added earlier.
 
-````
+```cs
 protected void MySubmitButton_Click(object sender, EventArgs e) 
 { 
     
@@ -48,14 +49,14 @@ protected void MySubmitButton_Click(object sender, EventArgs e)
     this.SaveFormData(this.FormData, true); 
     SubmitToWorkflow(); 
 }
-````
+```
 
 3. In the data tab add your custom email template and use the value of your textbox field containing the HTML table.
 
     1. Make sure to give a style for your HTML table inside your email template.
     2. Use the macro <WF_PROCESS_INST_RELDATA_VALUE.(YOUR_DATA_NAME)> to retrieve the value of your data to be used in the email.
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <style>

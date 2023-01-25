@@ -11,7 +11,8 @@ The JS tooltips allow the use of:
 2. In the General tab enable AJAX mode
 3. In the Web References tab include jQuery API and jQuery UI libraries
 4. Copy-paste the following line of code
-```
+
+```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
 <style>
@@ -21,9 +22,11 @@ The JS tooltips allow the use of:
     }
 </style>
 ```
+
 5. Close the form configuration and click on the JS tab.
 6. Copy-paste the following function
-```    
+
+```js
 function setTooltip(labelId, tooltipMessage)
 {
     $(labelId).attr('title', '');
@@ -50,11 +53,13 @@ function setTooltip(labelId, tooltipMessage)
     $(labelId).append('<i class="fa fa-info-circle"></i>');
 }
 ```
+
 This function takes 2 parameters, the label field id and the tooltip message you want to add to the field.
 
 7. In the JS pageLoad function you will call the setTooltip for each additional tooltip you want to add to your label.
 8. Example:
-```    
+
+```js
 function pageLoad () {
     setTooltip("#REQUEST_FIRSTNAME_LABEL", "This is the field to set your first name");
     setTooltip("#REQUEST_LASTNAME_LABEL", "This is the field to set your last name ");

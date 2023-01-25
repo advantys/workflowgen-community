@@ -14,7 +14,7 @@ It also has a drag-and-drop functionality for uploading files.
 
 3. Create a `web.config` file in the `\wfgen\wfapps\webforms\` folder (if it doesn't already exist) and add the following configurations:
 
-    ```xml
+```xml
     <?xml version="1.0"?>
     <configuration>
         <system.webServer>
@@ -26,7 +26,7 @@ It also has a drag-and-drop functionality for uploading files.
             </handlers>
         </system.webServer>
     </configuration>
-    ```
+```
 
 ## Installation
 1. Download the [AjaxFileUpload.txt](AjaxFileUpload.txt) file and copy it to `\wfgen\App_Data\Templates\Forms\[language]\Custom\fields`.
@@ -39,7 +39,8 @@ It also has a drag-and-drop functionality for uploading files.
 ![image](https://user-images.githubusercontent.com/42981614/121242509-a8dbd580-c86a-11eb-9625-277f35eca889.png)
 
 4. In the form designer code-behind, copy-paste the code below:
-```
+
+```cs
 protected void Page_Load(object sender, EventArgs e)
 {
      base.Page_Load(sender, e);
@@ -113,6 +114,7 @@ protected void SubmitButton_Click_HandleFileUpload(object sender, EventArgs e)
      }
 }
 ```
+
 5. In the desired action, add the OUT parameters mapping,
 e.g. `FILE1 : OUT : FILE1, FILE2 : OUT : FILE2, …, FILEN : OUT : FILEN`<br />
 ![502d6b103be85640b2f4eccff0ee6e425837e8ef_2_609x500](https://user-images.githubusercontent.com/42981614/121242648-ce68df00-c86a-11eb-92d5-14e6ca76a07b.gif)

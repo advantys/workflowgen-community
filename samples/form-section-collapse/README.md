@@ -20,14 +20,15 @@ A solution is to implement a section collapse, to reduce the amount the user nee
 6. Includes the jQuery API and jQuery UI libraries
 
 7. Add the following stylesheet in the Web References
-```
+
+```html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 ```
 
 8. Go onto the JS tab of the form designer
 9. Copy-paste the following code:
 
-```    
+```js    
 function pageLoad () {
     $('#FORM').hide();
     
