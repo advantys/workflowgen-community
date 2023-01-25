@@ -13,6 +13,8 @@ This repository contain a list of process sample and notification template for W
 - [Gridview data in a custom notification](https://github.com/advantys/workflowgen-community/tree/main/samples/gridview-data-in-custom-notification)
     - A solution on how to display a gridview inside a notification email.
 - [JS tooltips](https://github.com/advantys/workflowgen-community/tree/main/samples/js-tooltips)
-    - A solution of how to make custom tooltips for your field label using JavaScript and HTML.
+    - A solution on how to make custom tooltips for your field label using JavaScript and HTML.
 - [Notification templates](https://github.com/advantys/workflowgen-community/tree/main/samples/notifications-templates)
     - Repository of notification email template.
+- [Update request title with dynamic information](https://github.com/advantys/workflowgen-community/tree/main/samples/update-request-title-with-dynamic-information)
+    - A solution on how to add dynamic information to a request title. For example the name of the requester.
