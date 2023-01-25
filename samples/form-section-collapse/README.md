@@ -1,43 +1,38 @@
 # Overview
-When a form gets big, it can be quite long for a user to scroll down to their section which also makes the usage less user-friendly.
+When a form gets big, it can be quite long for a user to scroll down to their section, which makes the usage less user-friendly.
 
-A solution is to implement a section collapse, to reduce the amount the user needs to scroll and to only expand the sections that are required for that specific user.
+One solution is to implement a section collapse, which will reduce how much the user needs to scroll and only expand the sections that are required for that specific user.
 
 # Implementation
 
-1. In the form designer, add a new section.
-    1. In our process sample we added the section `FORM`.
+1. In the form designer, add a new section. In our process sample we added the `FORM` section.
 
-2. Add one textbox field to this new section, this field will contain which section should be collapsed.
-    1. In our process sample, the textbox is named `FIELDS_COLLAPSED`.
+2. Add one textbox field to this new section; this field will contain a list of sections to be collapsed. In our process sample, the textbox is named `FIELDS_COLLAPSED`.
 
-3. Click on the gear icon to open the Form configuration
+3. Click the gear icon to open the **Form configuration** panel.
 
-4. In the General tab enable the AJAX mode.
+4. On the **General** tab, check **Enable AJAX mode**.
 
-5. Click on the Web References tab
+5. On the **Web References** tab, check **Include the jQuery API and jQuery UI libraries**.
 
-6. Includes the jQuery API and jQuery UI libraries
-
-7. Add the following stylesheet in the Web References
-
-```html
+7. Add the following stylesheet in the text area:
+``` html
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 ```
+8. In the Form Designer, click **JS** in the toolbar to open the JavaScript code editor.
 
-8. Go onto the JS tab of the form designer
-9. Copy-paste the following code:
+9. Copy and paste the following code in the text area:
 
 ```js    
 function pageLoad () {
     $('#FORM').hide();
-    
+
     setCollapse();
 }
 
 function setCollapse() {
     $("div.SectionHeader").append('<i class="fas fa-minus" style="float: left; margin-right:10px; font-size: 21px; margin-top: 2px"></i>');
-    
+
     // Collapse the sections defined in HIDDEN_FIELDS_COLLAPSED
     if ($("#FORM_FIELDS_COLLAPSED").val() !== "") {
         var sections = $("#FORM_FIELDS_COLLAPSED").val().split(",");
@@ -62,8 +57,10 @@ function setCollapse() {
 }
 ```
 
-In the function `pageLoad` we hide the section `FORM` with JavaScript
+In the `pageLoad` section, the `FORM` section is hidden with JavaScript.
 
-In the function `setCollapse` we manage the form collapse with the field `FORM_FIELDS_COLLAPSED`
+In the `setCollapse` fuction, the form collapse is managed by the `FORM_FIELDS_COLLAPSED` field.
 
-If your section or field has a different ID, you will need to change the reference in the JS function.
+If your section or field has a different ID, you'll need to change the reference in the JavaScript function.
+
+9. For every web form action, add the `FORM_FIELDS_COLLAPSED` parameter with a comma-separated list of section IDs for the sections you want to display collapsed when the form is first loaded.
